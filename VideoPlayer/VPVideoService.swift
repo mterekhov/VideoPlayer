@@ -106,9 +106,7 @@ class VPVideoService: VPVideoServiceProtocol {
     }
 
     func play(filePath: String) {
-        guard let filePathURL = URL(string: filePath) else {
-            return
-        }
+        let filePathURL = URL(fileURLWithPath: filePath)
         
         player.pause()
         player.replaceCurrentItem(with: AVPlayerItem(url: filePathURL))
